@@ -15,9 +15,10 @@ mongoose.connect(process.env.MONGO_URL, {useNewUrlParser: true} ,()=>{
 app.use(express.json())
 
 const authRoute = require('./routes/auth')
-
+const postRoute = require('./routes/posts')
 
 app.use('/api/user', authRoute)
+app.use('/api/posts', postRoute)
 
 
 
